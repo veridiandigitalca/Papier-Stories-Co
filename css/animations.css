@@ -1,0 +1,80 @@
+/* ==========================================================================
+   PAPIER STORIES CO. — MOTION
+   A single calm entrance sequence on the hero, plus restrained
+   reveal-on-scroll for editorial blocks. Everything here is skipped
+   automatically when the visitor has requested reduced motion.
+   ========================================================================== */
+
+/* ---- reveal-on-scroll (applied via animations.js using IntersectionObserver) ---- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--dur-slow) var(--ease-editorial),
+              transform var(--dur-slow) var(--ease-editorial);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal="fade"] { transform: none; }
+[data-reveal].is-visible ~ [data-reveal-delay] { transition-delay: 120ms; }
+
+/* stagger children of a group */
+[data-reveal-group] > * { transition-delay: calc(var(--i, 0) * 90ms); }
+
+/* ---- hero entrance (one orchestrated sequence, not per-section) ---- */
+.hero__eyebrow,
+.hero__headline,
+.hero__lede,
+.hero__ctas {
+  opacity: 0;
+  transform: translateY(26px);
+}
+.hero.is-ready .hero__eyebrow {
+  animation: riseIn var(--dur-slow) var(--ease-editorial) 200ms forwards;
+}
+.hero.is-ready .hero__headline {
+  animation: riseIn 1100ms var(--ease-editorial) 380ms forwards;
+}
+.hero.is-ready .hero__lede {
+  animation: riseIn var(--dur-slow) var(--ease-editorial) 680ms forwards;
+}
+.hero.is-ready .hero__ctas {
+  animation: riseIn var(--dur-slow) var(--ease-editorial) 820ms forwards;
+}
+.hero__media img { transform: scale(1.14); }
+.hero.is-ready .hero__media img {
+  animation: settleIn 1800ms var(--ease-editorial) forwards;
+}
+
+@keyframes riseIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes settleIn {
+  to { transform: scale(1.02); }
+}
+
+/* image mask reveal used on select figures */
+.mask-reveal { position: relative; overflow: hidden; }
+.mask-reveal::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--color-paper);
+  transform-origin: left;
+  z-index: 2;
+  transition: transform 1100ms var(--ease-editorial);
+}
+.mask-reveal.is-visible::before { transform: scaleX(0); }
+
+/* word-by-word lit-up statement (see js/animations.js) */
+.word-reveal span { transition-delay: calc(var(--w, 0) * 40ms); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero__eyebrow, .hero__headline, .hero__lede, .hero__ctas {
+    opacity: 1 !important; transform: none !important; animation: none !important;
+  }
+  .hero__media img { transform: none !important; animation: none !important; }
+  .mask-reveal::before { display: none; }
+  .word-reveal span { opacity: 1 !important; }
+}

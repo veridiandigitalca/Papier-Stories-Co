@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility | Papier Stories Co.</title>
+  <meta name="description" content="Accessibility statement for the Papier Stories Co. website.">
+  <link rel="canonical" href="https://www.papierstories.ca/accessibility.html">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="images/logo/papier-stories-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand-mark" aria-label="Papier Stories Co., home">
+        <svg width="360" height="64" viewBox="0 0 360 64" xmlns="http://www.w3.org/2000/svg"><text x="0" y="38" font-family="'Fraunces', Georgia, serif" font-size="30" font-style="italic" font-weight="500" fill="currentColor">Papier Stories</text><text x="2" y="54" font-family="'Inter', Arial, sans-serif" font-size="9.5" letter-spacing="3.5" fill="currentColor" opacity="0.72">CO. — TORONTO</text></svg>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul class="primary-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn--primary" href="contact.html">Book a Consultation</a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <ul class="mobile-menu__list">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="process.html">Process</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__meta"><a href="tel:+19059062960">905-906-2960</a><a href="mailto:info@papierstories.ca">info@papierstories.ca</a></div>
+  </nav>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="label eyebrow-rule">Legal</p>
+        <h1 style="font-size: var(--fs-h2); max-width: none;">Accessibility Statement</h1>
+      </div>
+    </section>
+    <section class="section--tight">
+      <div class="wrap legal-copy">
+        <p>Papier Stories Co. is committed to making this website usable by as many people as possible, and this site has been built with WCAG 2.2 AA principles in mind, including:</p>
+        <ul>
+          <li>Semantic HTML and landmark regions throughout</li>
+          <li>Full keyboard access to navigation, the portfolio gallery, testimonials, and the contact form</li>
+          <li>Visible focus states on every interactive element</li>
+          <li>Alt text on meaningful images, with decorative images marked appropriately</li>
+          <li>Support for reduced-motion preferences</li>
+          <li>Accessible form labelling, error messaging, and status announcements</li>
+        </ul>
+        <h2>Feedback</h2>
+        <p>If you encounter an accessibility barrier on this site, please let us know at <a class="text-link" href="mailto:info@papierstories.ca">info@papierstories.ca</a> so we can address it. EDIT: Add a target response time if the studio wants to commit to one.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-bottom" style="border-top: 1px solid rgba(250,246,236,0.14); padding-top: var(--space-md);">
+        <p>&copy; <span data-year>2026</span> Papier Stories Co. &mdash; Toronto, Ontario, Canada</p>
+        <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="accessibility.html" aria-current="page">Accessibility</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/page-init.js"></script>
+</body>
+</html>
